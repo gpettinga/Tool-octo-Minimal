@@ -33,7 +33,10 @@ public class SimpleCounter : MonoBehaviour
 	{
 		foreach(GameObject Tool in toolObjects)
 		{
-			Debug.Log ("Found a Tool "+ Tool.transform.position);
+			ToolSpecificInformation toolInforScript = Tool.GetComponent<ToolSpecificInformation>();
+
+			//gameObject.GetComponent<ToolSpecificInformation.>();
+			Debug.Log ("Saved Tool Number "+ toolInforScript.toolNumber + Tool.transform.position);
 		}
 	}
 }

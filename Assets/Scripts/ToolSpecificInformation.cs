@@ -3,13 +3,19 @@ using System.Collections;
 
 public class ToolSpecificInformation : MonoBehaviour {
 
-	public int toolNumber;
+	public string toolNumber;
 	private int totalToolCount;
+	public TextMesh toolNumberText;
 
-	void Awake()
+	public void Awake()
 	{
 		totalToolCount = GameObject.FindGameObjectsWithTag ("Tool").Length;
-		toolNumber = totalToolCount;
+		toolNumber = totalToolCount.ToString();
+
+		toolNumberText = GetComponentInChildren<TextMesh> ();
+
+		GetComponentInChildren<TextMesh> ().text = toolNumber;
+
 	}
 
 }

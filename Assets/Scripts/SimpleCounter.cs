@@ -35,8 +35,18 @@ public class SimpleCounter : MonoBehaviour
 		{
 			ToolSpecificInformation toolInforScript = Tool.GetComponent<ToolSpecificInformation>();
 
-			//gameObject.GetComponent<ToolSpecificInformation.>();
+			ES2.Save(transform.position, "C:/Users/Field_0001/Desktop/Test_Save_Folder/toolpos"+toolInforScript.toolNumber+".txt");
 			Debug.Log ("Saved Tool Number "+ toolInforScript.toolNumber + Tool.transform.position);
 		}
+	}
+	public void LoadTools()
+	{
+		if (ES2.Exists("C:/Users/Field_0001/Desktop/Test_Save_Folder/toolpos"+1+".txt"))
+		    {
+//			ToolLocation = ES2.Load<transform.position>
+//			//ToolSpecificInformation toolInfoScript = Tool.GetComponent<ToolSpecificInformation>();
+//			Debug.Log ("Loaded tool Number ");
+
+			}
 	}
 }

@@ -34,6 +34,7 @@ TextureImporter:
     21300058: DkGreenlabel
     21300060: BlackTool
     21300062: DKGreyTool
+    21300064: Blue_boarder
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -295,7 +296,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BlueBoarder
+    - name: Blue_boarder
       rect:
         serializedVersion: 2
         x: 871
@@ -304,7 +305,7 @@ TextureImporter:
         height: 103
       alignment: 0
       pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 14, y: 15, z: 15, w: 14}
     - name: GreenBoarder
       rect:
         serializedVersion: 2

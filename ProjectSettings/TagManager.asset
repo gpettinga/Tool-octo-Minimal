@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   tags:
-  - Tool
+  - CBG_Tool
+  - XXT_Vibe_Tool
+  - XXT_Standard_Tool
+  - Tolteq_Tool
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

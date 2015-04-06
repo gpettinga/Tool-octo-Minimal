@@ -50,6 +50,8 @@ public class SaveLoadTiles : MonoBehaviour
 			// Now load the data using the same filename and tag we used to save it.
 			toolInstance.GetComponent<Renderer>().material = ES2.Load<Material>("myFile.txt?tag=color"+i);
 			Debug.Log ("material is "+ES2.Load<Material>("myFile.txt?tag=color"+i) );
+
+			toolInstance.name = i.ToString();
 			//tiles[i].GetComponent<Renderer>().material = ES2.Load<Material>("myFile.txt?tag=color"+i);
 
 			//we Call this earlier so we dont need it now

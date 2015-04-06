@@ -65,7 +65,7 @@ public class SimpleCounter : MonoBehaviour
 			for(int i = 0; i < toolObjects; i++ )
 				{
 					//toolpos = ES2.Load<Vector3>(transform.position,"C:/Users/Field_0001/Desktop/Test_Save_Folder/allTools.txt?tag="+i);
-					//Instantiate(toolObjects, toolpos, Quaternion.identity);
+					//	Instantiate(toolObjects, toolpos, Quaternion.identity);
 					i++;
 				}
 	}	

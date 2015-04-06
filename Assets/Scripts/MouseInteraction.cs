@@ -12,7 +12,7 @@ public class MouseInteraction : MonoBehaviour
 
 	void Start()
 	{
-		gameObject.rigidbody2D.isKinematic = true;
+		gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 	}
 
 
@@ -24,12 +24,12 @@ public class MouseInteraction : MonoBehaviour
 	
 	void OnMouseDrag()
 	{
-		gameObject.rigidbody2D.isKinematic = false;
+		gameObject.GetComponent<Rigidbody2D>().isKinematic = false;
 		transform.position = Camera.main.ScreenToWorldPoint(new Vector3(x,y,10));
 	}
 
 	void OnMouseUp()
 	{
-		gameObject.rigidbody2D.isKinematic = true;
+		gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
 	}
 }

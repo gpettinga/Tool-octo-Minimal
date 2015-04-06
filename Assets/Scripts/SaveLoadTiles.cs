@@ -24,8 +24,8 @@ public class SaveLoadTiles : MonoBehaviour
 		for(int i=0; i<tiles.Length; i++)
 		{
 			// ... and save each aspect of it, appending it's position to the tag.
-			ES2.Save(tiles[i].GetComponentInChildren<Renderer>().material.color, "myFile.txt?tag=color"+i);
-			Debug.Log (tiles[i].GetComponentInChildren<Renderer>().material.color);
+			ES2.Save(tiles[i].GetComponent<Renderer>().material, "myFile.txt?tag=color"+i);
+			Debug.Log (tiles[i].GetComponent<Renderer>().material);
 
 			ES2.Save (tiles[i].transform.position, "myFile.txt?tag=position"+i);
 			// Get the TextMesh so we can save it's variables.In children
@@ -45,9 +45,12 @@ public class SaveLoadTiles : MonoBehaviour
 		for(int i=0; i<numTiles; i++)
 		{
 			//create a blank tool at the location [i] that was saved
-			Instantiate(blankTool,ES2.Load<Vector3>("myFile.txt?tag=position"+i),Quaternion.identity);
+			GameObject toolInstance;
+			toolInstance = Instantiate(blankTool,ES2.Load<Vector3>("myFile.txt?tag=position"+i),Quaternion.identity) as GameObject;
 			// Now load the data using the same filename and tag we used to save it.
-			//tiles[i].GetComponent<Renderer>().material.color = ES2.Load<Color>("myFile.txt?tag=color"+i);
+			toolInstance.GetComponent<Renderer>().material = ES2.Load<Material>("myFile.txt?tag=color"+i);
+			Debug.Log ("material is "+ES2.Load<Material>("myFile.txt?tag=color"+i) );
+			//tiles[i].GetComponent<Renderer>().material = ES2.Load<Material>("myFile.txt?tag=color"+i);
 
 			//we Call this earlier so we dont need it now
 			//tiles[i].transform.position = ES2.Load<Vector3>("myFile.txt?tag=position"+i);

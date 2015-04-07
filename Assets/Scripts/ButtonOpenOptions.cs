@@ -27,8 +27,5 @@ public class ButtonOpenOptions : MonoBehaviour {
 			panelToAccess.SetActive(false);
 		}
 	}
-	public void MaterialOptions()
-	{
 
-	}
 }

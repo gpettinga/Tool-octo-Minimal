@@ -58,9 +58,11 @@ public class SaveLoadTiles : MonoBehaviour
 			//tiles[i].transform.position = ES2.Load<Vector3>("myFile.txt?tag=position"+i);
 
 			// Get the TextMesh so we can load data into it.
+
+			toolInstance.GetComponentInChildren<TextMesh>().text =  ES2.Load<string>("myFile.txt?tag=text"+i);
 			//TextMesh textMesh = tiles[i].GetComponentInChildren	<TextMesh>();
-//			textMesh.text = ES2.Load<string>("myFile.txt?tag=text"+i);
-//			textMesh.color = ES2.Load<Color>("myFile.txt?tag=textColor"+i);
+			//textMesh.text = ES2.Load<string>("myFile.txt?tag=text"+i);
+			//textMesh.color = ES2.Load<Color>("myFile.txt?tag=textColor"+i);
 		}
 	}
 }

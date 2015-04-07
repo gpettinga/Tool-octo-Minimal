@@ -18,22 +18,22 @@ public class ChangeToolColor : MonoBehaviour
 	}
 	public void Green()
 	{
-		
+		toolRend.material = toolMats [1];
 	}
 	public void Blue()
 	{
-		
+		toolRend.material = toolMats [2];
 	}
 	public void Yellow()
 	{
-		
+		toolRend.material = toolMats [3];
 	}
 	public void Grey()
 	{
-		
+		toolRend.material = toolMats [4];
 	}
 	public void Purple()
 	{
-		
+		toolRend.material = toolMats [5];
 	}
 }

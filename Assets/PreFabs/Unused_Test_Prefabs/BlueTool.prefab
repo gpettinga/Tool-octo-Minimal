@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400000}
   - 61: {fileID: 6100000}
-  - 114: {fileID: 11496942}
+  - 114: {fileID: 11416280}
   m_Layer: 0
   m_Name: BlueTool
   m_TagString: Tool
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2bcb67d3fe38148a05ad400dd0ac41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11496942
+--- !u!114 &11416280
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -154,13 +154,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6ed6cff13652d245971c86d0b0d0809, type: 3}
+  m_Script: {fileID: 11500000, guid: 6b3316b844e2448c2b20b9ffb81bb4ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toolNumber: 
-  toolNumberText: {fileID: 0}
-  whereIsTool: {x: 0, y: 0, z: 0}
-  toolType: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

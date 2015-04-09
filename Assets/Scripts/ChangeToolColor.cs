@@ -36,4 +36,12 @@ public class ChangeToolColor : MonoBehaviour
 	{
 		toolRend.material = toolMats [5];
 	}
+	public void White()
+	{
+		toolRend.material = toolMats [6];
+	}
+	public void Black()
+	{
+		toolRend.material = toolMats [7];
+	}
 }

@@ -12,12 +12,12 @@ To set these, go to:
 
 Edit -> Project Settings -> Player -> Android Tab -> Other Settings -> Configuration -> Force SD Card permission.
 
-##### Important Note to iOS Users ##### 
+##### Important Note to iOS and Android Users ##### 
 
-If using 'Strip ByteCode', you must place the 'link.xml' file supplied with Easy Save into your Assets folder.
+If using 'Strip ByteCode', you must place the 'link.xml' file supplied with Easy Save into your Assets folder (this is done automatically from v2.60 onwards).
 'Use micro mscorlib' does not work with Easy Save as it contains no File I/O functionality.
 
-##### Important Note to those using Encryption #####
+##### Important Note to those using Encryption in iOS #####
 
 If using encryption it may be necessary to declare that you are using encryption in certain countries.
 For example, you will be asked if you are using encryption when submitting an app to the Apple App Store.

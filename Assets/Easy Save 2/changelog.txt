@@ -1,3 +1,25 @@
+v2.6.2
+- Added Obfuscation mode, to allow data to be scrambled with better performance than encryption.
+- Support can now be added for Javascript/UnityScript classes in ‘Manage Types’.
+- Fixed issue where Metro DLL wasn’t being updated.
+- File Editor now handles custom classes without causing an error.
+
+v2.6.1
+- Temporarily removed ES2_AudioClip while Unity fix a bug at their end.
+
+v2.60
+- Support added for Unity 5.
+- 'Refresh' button added to 'Manage Files...'
+- Pro users no longer have to use the 'Dark' skin when using Editor windows.
+- Playmaker actions can now be installed even if Playmaker isn't located in 'Assets/Playmaker'.
+- link.xml has been moved to Assets folder so it no longer requires a manual install.
+
+v2.59
+- 'Manage Types' now has option to reset the type list.
+- File Editor no longer keeps values of fields when switching tags.
+- Default Settings set in the 'Settings' menu now persist after running in the Editor.
+- 'Exists' action now switches to the next state correctly.
+
 v2.58
 - Settings can now be set from the Settings window accessible from ‘Assets > Easy Save 2 > Settings…’.
 	- This allows access to Default Settings, Tools, Information, Change Log and Readme.

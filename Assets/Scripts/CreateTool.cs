@@ -12,7 +12,7 @@ public class CreateTool : MonoBehaviour {
 
 	public void SpawnTool(Object ToolIcon)
 	{
-		randSpawnPoint = Random.insideUnitCircle * 50;
+		randSpawnPoint = Random.insideUnitCircle * 400;
 		Instantiate (ToolIcon,randSpawnPoint, Quaternion.identity);
 		//Instantiate (ToolIcon, new Vector2(xpos,ypos), Quaternion.identity);
 

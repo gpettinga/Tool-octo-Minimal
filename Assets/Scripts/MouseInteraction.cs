@@ -17,7 +17,7 @@ public class MouseInteraction : MonoBehaviour
 	void Start()
 	{
 		gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-		collidersOnTool = gameObject.GetComponents<BoxCollider2D>();
+		//collidersOnTool = gameObject.GetComponents<BoxCollider2D>();
 		//gameObject.GetComponent<Collider2D> ().isTrigger = true;
 	}
 
@@ -53,7 +53,7 @@ public class MouseInteraction : MonoBehaviour
 //		{
 //			col.enabled = false;
 //		}
-		Debug.Log (transform.parent);
+		//Debug.Log (transform.parent);
 	}
 
 	void OnMouseUp()

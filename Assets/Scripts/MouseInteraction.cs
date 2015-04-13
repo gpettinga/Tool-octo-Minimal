@@ -49,20 +49,20 @@ public class MouseInteraction : MonoBehaviour
 		//gameObject.GetComponent<Collider2D> ().isTrigger = false;
 		transform.position = Camera.main.ScreenToWorldPoint (new Vector3 (x, y, 10));
 		this.gameObject.transform.parent = null;
-		foreach(BoxCollider2D col in collidersOnTool)
-		{
-			col.enabled = false;
-		}
-		//Debug.Log (transform.parent);
+//		foreach(BoxCollider2D col in collidersOnTool)
+//		{
+//			col.enabled = false;
+//		}
+		Debug.Log (transform.parent);
 	}
 
 	void OnMouseUp()
 	{
 		gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
-		foreach(BoxCollider2D col in collidersOnTool)
-		{
-			col.enabled = true;
-		}
+//		foreach(BoxCollider2D col in collidersOnTool)
+//		{
+//			col.enabled = true;
+//		}
 		//gameObject.GetComponent<Collider2D> ().isTrigger = true;
 	}
 }

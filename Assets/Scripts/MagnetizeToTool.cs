@@ -17,7 +17,7 @@ public class MagnetizeToTool : MonoBehaviour
 
 
 
-	void OnTriggerStay2D(Collider2D tool)
+	void OnTriggerEnter2D(Collider2D tool)
 	{
 		if (tool.CompareTag("Tool"))
 		{
@@ -30,7 +30,7 @@ public class MagnetizeToTool : MonoBehaviour
 	}
 	void OnTriggerExit2D(Collider2D tool)
 	{
-		//tool.transform.parent = null;
+		tool.transform.parent = null;
 		timeActive = false;
 
 

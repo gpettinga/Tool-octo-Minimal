@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f7c2b27021fe24040a15c90bfc80ef29
+guid: 6e1d28cbe05b54fd38b2d78e68703d7d
 labels:
 - Save
 - Load
@@ -43,29 +43,7 @@ labels:
 - iOS
 - Android
 - Crossplatform
-- writer
-- read
-- reader
-- cloud
-- excel
-- spreadsheet
-- csv
-- xls
-- table
-- export
-PluginImporter:
-  serializedVersion: 1
-  iconMap: {}
-  executionOrder: {}
-  isPreloaded: 0
-  platformData:
-    Any:
-      enabled: 1
-      settings: {}
-    Editor:
-      enabled: 0
-      settings:
-        DefaultValueInitialized: true
+TextScriptImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 

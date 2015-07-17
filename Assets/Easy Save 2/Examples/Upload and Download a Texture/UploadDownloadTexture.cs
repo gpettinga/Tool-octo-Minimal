@@ -95,9 +95,10 @@ public class UploadDownloadTexture : MonoBehaviour
 	 * or returns null if there's not one. */
 	private Texture2D GetTexture()
 	{
-		if(GetComponent<Renderer>().material != null)
-			if(GetComponent<Renderer>().material.mainTexture != null)
-				return GetComponent<Renderer>().material.mainTexture as Texture2D;
+		Renderer renderer = GetComponent<Renderer>();
+		if(renderer.material != null)
+			if(renderer.material.mainTexture != null)
+				return renderer.material.mainTexture as Texture2D;
 		return null;	
 	}
 	
@@ -105,8 +106,9 @@ public class UploadDownloadTexture : MonoBehaviour
 	 * if there's no Material to apply the texture to. */
 	private void SetTexture(Texture2D texture)
 	{
-		if(GetComponent<Renderer>().material != null)
-				GetComponent<Renderer>().material.mainTexture = texture;
+		Renderer renderer = GetComponent<Renderer>();
+		if(renderer.material != null)
+				renderer.material.mainTexture = texture;
 		else
 			Debug.LogError ("There is no material attached to this object.");
 	}

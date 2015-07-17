@@ -1,10 +1,17 @@
-v2.6.2
+v2.6.4
+- Ability to export to spreadsheet (currently as CSV, as supported by Excel, Numbers and other popular spreadsheet software).
+- ES2Web now has a progress and uploadProgress variable to check progress of downloads and uploads.
+- Added UploadRaw action to Playmaker.
+- Playmaker actions now throw appropriate errors when catching exceptions.
+- Fixed bug with File Editor where a single tag in a file might become unselectable.
+
+v2.6.3
 - Added Obfuscation mode, to allow data to be scrambled with better performance than encryption.
 - Support can now be added for Javascript/UnityScript classes in ‘Manage Types’.
 - Fixed issue where Metro DLL wasn’t being updated.
 - File Editor now handles custom classes without causing an error.
 
-v2.6.1
+v2.6.1 & v2.6.2
 - Temporarily removed ES2_AudioClip while Unity fix a bug at their end.
 
 v2.60

@@ -55,9 +55,7 @@ public class ES2Init : MonoBehaviour
 		ES2TypeManager.types[typeof(System.Enum)] = new ES2_Enum();
 		ES2TypeManager.types[typeof(UnityEngine.Matrix4x4)] = new ES2_Matrix4x4();
 		ES2TypeManager.types[typeof(UnityEngine.BoneWeight)] = new ES2_BoneWeight();
-		ES2TypeManager.types[typeof(UnityEngine.SkinnedMeshRenderer)] = new ES2_SkinnedMeshRenderer();
 		ES2TypeManager.types[typeof(System.SByte)] = new ES2_sbyte();
-		ES2TypeManager.types[typeof(UnityEngine.Sprite)] = new ES2_Sprite();
 
 	}
 }

@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-#if !UNITY_3_4 && !UNITY_3_5 && !UNITY_4_0 && !UNITY_4_1 && !UNITY_4_2
 [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
 public sealed class ES2_Sprite : ES2Type
 {
@@ -31,6 +30,21 @@ public sealed class ES2_Sprite : ES2Type
 		Sprite sprite = Sprite.Create(reader.Read<Texture2D>(), reader.Read<Rect>(), reader.Read<Vector2>(), reader.Read<float>());
 		sprite.name = reader.Read<string>();
 		return sprite;
+	}
+}
+#if UNITY_3_4 || UNITY_3_5 || UNITY_4_0 || UNITY_4_1  || UNITY_4_2
+// Create a dummy class for versions of Unity which don't support the Sprite class.
+namespace UnityEngine
+{
+	public class Sprite
+	{
+		public Texture2D texture;
+		public Rect rect;
+		public Bounds bounds;
+		public Rect textureRect;
+		public string name;
+		
+		public static Sprite Create(Texture2D t, Rect r, Vector2 v, float f){ return null; }
 	}
 }
 #endif

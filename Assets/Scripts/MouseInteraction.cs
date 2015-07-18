@@ -10,6 +10,7 @@ public class MouseInteraction : MonoBehaviour
 
 	float x;
 	float y;
+	float z;
 
 	private BoxCollider2D[] collidersOnTool;
 
@@ -27,6 +28,8 @@ public class MouseInteraction : MonoBehaviour
 	{
 		x = Input.mousePosition.x;
 		y = Input.mousePosition.y;
+
+	
 		//unused code for selection box ***********************************************
 //		if (GetComponent<Renderer>().isVisible && Input.GetMouseButtonUp(0))
 //		{

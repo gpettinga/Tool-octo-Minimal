@@ -11,6 +11,8 @@ public class MouseInteraction : MonoBehaviour
 	float x;
 	float y;
 
+	public Vector3 currentPos;
+
 	private BoxCollider2D[] collidersOnTool;
 
 
@@ -49,6 +51,8 @@ public class MouseInteraction : MonoBehaviour
 		//gameObject.GetComponent<Collider2D> ().isTrigger = false;
 		transform.position = Camera.main.ScreenToWorldPoint (new Vector3 (x, y, 10));
 		this.gameObject.transform.parent = null;
+
+		currentPos = transform.position;
 //		foreach(BoxCollider2D col in collidersOnTool)
 //		{
 //			col.enabled = false;
@@ -59,6 +63,7 @@ public class MouseInteraction : MonoBehaviour
 	void OnMouseUp()
 	{
 		gameObject.GetComponent<Rigidbody2D>().isKinematic = true;
+		transform.position = new Vector3 (currentPos.x, currentPos.y, 0.0f);
 //		foreach(BoxCollider2D col in collidersOnTool)
 //		{
 //			col.enabled = true;

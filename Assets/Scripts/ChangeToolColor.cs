@@ -6,10 +6,12 @@ public class ChangeToolColor : MonoBehaviour
 {
 	public Material[] toolMats;
 	public Renderer toolRend;
+	public TextMesh txtColor;
 	// Use this for initialization
 	void Start () 
 	{
 		toolRend = GetComponent<Renderer> ();
+		txtColor = GetComponentInChildren<TextMesh> ();
 	}
 	
 	public void Red()
@@ -43,5 +45,15 @@ public class ChangeToolColor : MonoBehaviour
 	public void Black()
 	{
 		toolRend.material = toolMats [7];
+		txtColor.color = Color.white;
+
+	}
+	public void Orange()
+	{
+		toolRend.material = toolMats [8];
+	}
+	public void LightBlue()
+	{
+		toolRend.material = toolMats [9];
 	}
 }

@@ -62,7 +62,7 @@ public class SaveLoadTiles : MonoBehaviour
 			toolInstance.GetComponentInChildren<TextMesh>().text =  ES2.Load<string>("myFile.txt?tag=text"+i);
 			//TextMesh textMesh = tiles[i].GetComponentInChildren	<TextMesh>();
 			//textMesh.text = ES2.Load<string>("myFile.txt?tag=text"+i);
-			//textMesh.color = ES2.Load<Color>("myFile.txt?tag=textColor"+i);
+			toolInstance.GetComponentInChildren<TextMesh>().color = ES2.Load<Color>("myFile.txt?tag=textColor"+i);
 		}
 	}
 }

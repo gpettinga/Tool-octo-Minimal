@@ -10,6 +10,7 @@ public class MouseInteraction : MonoBehaviour
 
 	float x;
 	float y;
+	float z;
 
 	public Vector3 currentPos;
 
@@ -29,6 +30,8 @@ public class MouseInteraction : MonoBehaviour
 	{
 		x = Input.mousePosition.x;
 		y = Input.mousePosition.y;
+
+	
 		//unused code for selection box ***********************************************
 //		if (GetComponent<Renderer>().isVisible && Input.GetMouseButtonUp(0))
 //		{

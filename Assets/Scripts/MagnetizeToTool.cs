@@ -13,7 +13,7 @@ public class MagnetizeToTool : MonoBehaviour
 
 	public Vector3 offSet = new Vector3 (1.5f, 0, 0);
 
-	private float timerLimit = 2.0f;
+	private float timerLimit = 1.0f;
 
 
 
@@ -30,9 +30,11 @@ public class MagnetizeToTool : MonoBehaviour
 	}
 	void OnTriggerExit2D(Collider2D tool)
 	{
-		tool.transform.parent = null;
-		timeActive = false;
-
+		if (tool.CompareTag("Tool"))
+		{
+			tool.transform.parent = null;
+			timeActive = false;
+		}
 
 	}
 

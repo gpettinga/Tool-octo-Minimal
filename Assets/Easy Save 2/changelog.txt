@@ -1,3 +1,28 @@
+v2.6.8
+- File Editor can now create file and add tags to them.
+- File Editor now prompts for a password if the default password is incorrect.
+- ES2.LoadObject method added to load data from a file without specifying a type.
+- PlayMaker actions added: Save/Load Position, Save/Load Rotation and Save/Load Scale.
+
+v2.6.7
+- Support added for Gradients.
+- File Editor now displays ‘double’ fields without truncating the value.
+- Restructured project so that build settings for plugins are automatically set.
+
+v2.6.6
+- Manage Types now has a search bar for easier finding of types.
+- Support for 3D arrays added.
+- ES2Web now includes an AppendToFile method.
+- ScriptableObject now supported by Manage Types.
+- Added Playmaker actions for creating spreadsheets.
+- Added Playmaker action for converting a Texture2D to a PNG string.
+
+v2.6.5
+- ES2Web.UploadFile method added for uploading files to server.
+- Fixed bug where File Editor would repeatedly display error message.
+- PlayMaker actions now use C# file instead of DLL.
+- Other fixes.
+
 v2.6.4
 - Ability to export to spreadsheet (currently as CSV, as supported by Excel, Numbers and other popular spreadsheet software).
 - ES2Web now has a progress and uploadProgress variable to check progress of downloads and uploads.

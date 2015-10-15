@@ -56,6 +56,12 @@ public class ES2Init : MonoBehaviour
 		ES2TypeManager.types[typeof(UnityEngine.Matrix4x4)] = new ES2_Matrix4x4();
 		ES2TypeManager.types[typeof(UnityEngine.BoneWeight)] = new ES2_BoneWeight();
 		ES2TypeManager.types[typeof(System.SByte)] = new ES2_sbyte();
+		ES2TypeManager.types[typeof(UnityEngine.GradientAlphaKey)] = new ES2_GradientAlphaKey();
+		ES2TypeManager.types[typeof(UnityEngine.GradientColorKey)] = new ES2_GradientColorKey();
+		ES2TypeManager.types[typeof(UnityEngine.Gradient)] = new ES2_Gradient();
+		ES2TypeManager.types[typeof(UnityEngine.Sprite)] = new ES2_Sprite();
+		ES2TypeManager.types[typeof(UnityEngine.AudioClip)] = new ES2_AudioClip();
 
+		ES2.initialised = true;
 	}
 }

@@ -24,8 +24,9 @@ public class SaveLoadTiles : MonoBehaviour
 		// Loop over each of the tiles ...
 		for(int i=0; i<tiles.Length; i++)
 		{
+			Debug.Log ("saving tiles?");
 			// ... and save each aspect of it, appending it's position to the tag.
-			ES2.Save(tiles[i].GetComponent<Renderer>().material, "myFile.txt?tag=color"+i);
+			ES2.Save(tiles[i].GetComponentInChildren<Renderer>().material, "myFile.txt?tag=color"+i);
 			//Debug.Log (tiles[i].GetComponent<Renderer>().material);
 
 			ES2.Save (tiles[i].transform.position, "myFile.txt?tag=position"+i);
@@ -45,6 +46,10 @@ public class SaveLoadTiles : MonoBehaviour
 		// Loop over each of the tiles we want to load ...
 		for(int i=0; i<numTiles; i++)
 		{
+			if (!ES2.Exists("myFile.txt"))
+			{
+				return;
+			}
 			//create a blank tool at the location [i] that was saved
 			GameObject toolInstance;
 			toolInstance = Instantiate(blankTool,ES2.Load<Vector3>("myFile.txt?tag=position"+i),Quaternion.identity) as GameObject;

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7d8ad21c52d744cb6bf123e3c8114cfc
+guid: 30e1b5afe5e6644d0ba53ed348ec04a7
 labels:
 - Save
 - Load
@@ -43,11 +43,3 @@ labels:
 - iOS
 - Android
 - Crossplatform
-MonoImporter:
-  serializedVersion: 2
-  defaultReferences: []
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
-  assetBundleName: 
-  assetBundleVariant: 

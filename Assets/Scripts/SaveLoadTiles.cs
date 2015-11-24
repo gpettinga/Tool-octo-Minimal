@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SaveLoadTiles : MonoBehaviour 
 {
@@ -24,7 +25,7 @@ public class SaveLoadTiles : MonoBehaviour
 		// Loop over each of the tiles ...
 		for(int i=0; i<tiles.Length; i++)
 		{
-			Debug.Log ("saving tiles?");
+			//Debug.Log ("saving tiles?");
 			// ... and save each aspect of it, appending it's position to the tag.
 			ES2.Save(tiles[i].GetComponentInChildren<Renderer>().material, "myFile.txt?tag=color"+i);
 			//Debug.Log (tiles[i].GetComponent<Renderer>().material);
@@ -69,6 +70,30 @@ public class SaveLoadTiles : MonoBehaviour
 			//TextMesh textMesh = tiles[i].GetComponentInChildren	<TextMesh>();
 			//textMesh.text = ES2.Load<string>("myFile.txt?tag=text"+i);
 			toolInstance.GetComponentInChildren<TextMesh>().color = ES2.Load<Color>("myFile.txt?tag=textColor"+i);
+		}
+	}
+	public void SaveTools()
+	{
+		//get the amount of tiles to be saved/loaded 
+		tiles = GameObject.FindGameObjectsWithTag ("Tool");
+		numTiles = tiles.Length;
+		//saving the number of tiles 
+		ES2.Save(tiles.Length, "myFile.txt?tag=tileLength");
+		//Debug.Log ("number of tiles saved is " + tiles.Length);
+		
+		// Loop over each of the tiles ...
+		for(int i=0; i<tiles.Length; i++)
+		{
+			Debug.Log ("saving tiles?");
+			// ... and save each aspect of it, appending it's position to the tag.
+			ES2.Save(tiles[i].GetComponentInChildren<Renderer>().material, "myFile.txt?tag=color"+i);
+			//Debug.Log (tiles[i].GetComponent<Renderer>().material);
+			
+			ES2.Save (tiles[i].transform.position, "myFile.txt?tag=position"+i);
+			// Get the TextMesh so we can save it's variables.In children
+			TextMesh textMesh = tiles[i].GetComponentInChildren<TextMesh>();
+			ES2.Save(textMesh.text, "myFile.txt?tag=text"+i);
+			ES2.Save(textMesh.color, "myFile.txt?tag=textColor"+i);
 		}
 	}
 }

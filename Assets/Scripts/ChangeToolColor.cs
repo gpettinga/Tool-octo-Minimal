@@ -42,7 +42,7 @@ public class ChangeToolColor : MonoBehaviour
 	public void Purple()
 	{
 		toolRend.material = toolMats [5];
-		txtColor.color = Color.black;
+		txtColor.color = Color.white;
 	}
 	public void White()
 	{
@@ -74,5 +74,20 @@ public class ChangeToolColor : MonoBehaviour
 	{
 		txtColor.color = Color.black;
 	}
-
+	public void WhiteText()
+	{
+		txtColor.color = Color.white;
+	}
+	public void BlueText()
+	{
+		txtColor.color = Color.blue;
+	}
+	public void GreenText()
+	{
+		txtColor.color = Color.green;
+	}
+	public void YellowText()
+	{
+		txtColor.color = Color.yellow;
+	}
 }

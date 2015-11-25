@@ -8,7 +8,7 @@ public class CreateTool : MonoBehaviour {
 	public Vector3 randSpawnPoint;
 	public float xpos = 0.0f;
 	public float ypos = 0.0f;
-
+	public Vector3 nonRandSpawn;
 	void Start()
 	{
 
@@ -21,7 +21,7 @@ public class CreateTool : MonoBehaviour {
 
 		//Creates tool at a random point on screen one
 		randSpawnPoint = Random.insideUnitCircle * 400;
-		Instantiate (ToolIcon,randSpawnPoint, Quaternion.identity);
+		Instantiate (ToolIcon,nonRandSpawn, Quaternion.identity);
 
 	}
 }

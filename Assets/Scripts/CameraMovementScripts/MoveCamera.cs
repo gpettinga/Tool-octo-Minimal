@@ -10,6 +10,8 @@ public class MoveCamera : MonoBehaviour
 	public Transform goCamPos2;
 	public Transform goCamPos3;
 	public Transform goCamPos4;
+	public Transform goCamPos5;
+	public Transform goCamPos6;
 
 	public float transitionTime = .5f;
 	public float firstClickTime;
@@ -20,6 +22,8 @@ public class MoveCamera : MonoBehaviour
 	public static bool camAtPos2 = false;
 	public static bool camAtPos3 = false;
 	public static bool camAtPos4 = false;
+	public static bool camAtPos5 = false;
+	public static bool camAtPos6 = false;
 
 
 	// Use this for initialization
@@ -48,6 +52,14 @@ public class MoveCamera : MonoBehaviour
 			{
 			transform.position = Vector3.Lerp (currentPos, goCamPos4.position, transitionTime * Time.deltaTime);
 			}
+		else if (camAtPos5)
+			{
+				transform.position = Vector3.Lerp (currentPos, goCamPos5.position, transitionTime * Time.deltaTime);
+			}
+		else if (camAtPos6)
+			{
+				transform.position = Vector3.Lerp (currentPos, goCamPos6.position, transitionTime * Time.deltaTime);
+			}
 		
 	}
 
@@ -57,6 +69,8 @@ public class MoveCamera : MonoBehaviour
 		camAtPos2 = false;
 		camAtPos3 = false;
 		camAtPos4 = false;
+		camAtPos5 = false;
+		camAtPos6 = false;
 	}
 	public void atPosTwo()
 	{
@@ -64,6 +78,8 @@ public class MoveCamera : MonoBehaviour
 		camAtPos2 = true;
 		camAtPos3 = false;
 		camAtPos4 = false;
+		camAtPos5 = false;
+		camAtPos6 = false;
 	}
 	public void atPosThree()
 	{
@@ -71,6 +87,8 @@ public class MoveCamera : MonoBehaviour
 		camAtPos2 = false;
 		camAtPos3 = true;
 		camAtPos4 = false;
+		camAtPos5 = false;
+		camAtPos6 = false;
 	}
 	public void atPosFour()
 	{
@@ -78,6 +96,26 @@ public class MoveCamera : MonoBehaviour
 		camAtPos2 = false;
 		camAtPos3 = false;
 		camAtPos4 = true;
+		camAtPos5 = false;
+		camAtPos6 = false;
+	}
+	public void atPosFive()
+	{
+		camAtPos1 = false;
+		camAtPos2 = false;
+		camAtPos3 = false;
+		camAtPos4 = false;
+		camAtPos5 = true;
+		camAtPos6 = false;
+	}
+	public void atPosSix()
+	{
+		camAtPos1 = false;
+		camAtPos2 = false;
+		camAtPos3 = false;
+		camAtPos4 = false;
+		camAtPos5 = false;
+		camAtPos6 = true;
 	}
 
 //	void OnGUI()

@@ -6,12 +6,10 @@ public class ChangeOrDestroyTool : MonoBehaviour {
 
 	public bool mouseOverTool;
 	public Canvas toolOptions;
-
 	void Start()
 	{
 		toolOptions = GetComponentInChildren<Canvas> ();
 		toolOptions.enabled = false;
-	
 	}
 
 	void OnMouseEnter()
@@ -35,7 +33,6 @@ public class ChangeOrDestroyTool : MonoBehaviour {
 	{
 		toolOptions.enabled = false;
 	}
-
 	public void Delete()
 	{
 		Destroy (gameObject);

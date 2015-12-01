@@ -15,12 +15,12 @@ public class ChangeKitText : MonoBehaviour
 	
 	public void OpenInput()
 	{
-		Debug.Log ("Open Text Editor");
+		//Debug.Log ("Open Text Editor");
 		inputField.SetActive (true);
 	}
 	public void CloseInput()
 	{
-		Debug.Log("Close Text Editor");
+		//Debug.Log("Close Text Editor");
 		inputField.SetActive (false);
 	}
 

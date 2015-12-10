@@ -82,16 +82,17 @@ public class SaveLoadTiles : MonoBehaviour
 			// Now load the data using the same filename and tag we used to save it.
 			toolInstance.GetComponent<Renderer>().material = ES2.Load<Material>("myFile.txt?tag=color"+i);
 			//Debug.Log ("material is "+ES2.Load<Material>("myFile.txt?tag=color"+i) );
-
-			toolInstance.name = i.ToString();
 			//tiles[i].GetComponent<Renderer>().material = ES2.Load<Material>("myFile.txt?tag=color"+i);
-
 			//we Call this earlier so we dont need it now
 			//tiles[i].transform.position = ES2.Load<Vector3>("myFile.txt?tag=position"+i);
-
 			// Get the TextMesh so we can load data into it.
-
 			toolInstance.GetComponentInChildren<TextMesh>().text =  ES2.Load<string>("myFile.txt?tag=text"+i);
+			// and change the name of each component to match its on screen text name.
+			toolInstance.name = toolInstance.GetComponentInChildren<TextMesh>().text;
+			//or give it a number associated with the save file.
+			//toolInstance.name = i.ToString();
+
+
 			//TextMesh textMesh = tiles[i].GetComponentInChildren	<TextMesh>();
 			//textMesh.text = ES2.Load<string>("myFile.txt?tag=text"+i);
 			toolInstance.GetComponentInChildren<TextMesh>().color = ES2.Load<Color>("myFile.txt?tag=textColor"+i);
@@ -106,18 +107,19 @@ public class SaveLoadTiles : MonoBehaviour
 			GameObject LabelInstance;
 			LabelInstance = Instantiate(blankLabel,ES2.Load<Vector3>("myOtherFile.txt?tag=position"+i),Quaternion.identity) as GameObject;
 			// Now load the data using the same filename and tag we used to save it.
-			//toolInstance.GetComponent<Renderer>().material = ES2.Load<Material>("myOtherFile.txt?tag=color"+i);
-			//Debug.Log ("material is "+ES2.Load<Material>("myFile.txt?tag=color"+i) );
+
+			//**********************  Unused for Labels  ********************
+			// **toolInstance.GetComponent<Renderer>().material = ES2.Load<Material>("myOtherFile.txt?tag=color"+i);
+			// **Debug.Log ("material is "+ES2.Load<Material>("myFile.txt?tag=color"+i) );
+			// **tiles[i].GetComponent<Renderer>().material = ES2.Load<Material>("myFile.txt?tag=color"+i);
+			// **we Call this earlier so we dont need it now
+			// **tiles[i].transform.position = ES2.Load<Vector3>("myFile.txt?tag=position"+i);
 			
-			LabelInstance.name = "Label "+i.ToString();
-			//tiles[i].GetComponent<Renderer>().material = ES2.Load<Material>("myFile.txt?tag=color"+i);
-			
-			//we Call this earlier so we dont need it now
-			//tiles[i].transform.position = ES2.Load<Vector3>("myFile.txt?tag=position"+i);
-			
-			// Get the TextMesh so we can load data into it.
-			
+			// Get the TextMesh so we can load data into it...
 			LabelInstance.GetComponentInChildren<TextMesh>().text =  ES2.Load<string>("myOtherFile.txt?tag=text"+i);
+
+			// and change the name of each component to match its on screen text name.
+			LabelInstance.name = "Label " + LabelInstance.GetComponentInChildren<TextMesh>().text;
 			//TextMesh textMesh = tiles[i].GetComponentInChildren	<TextMesh>();
 			//textMesh.text = ES2.Load<string>("myFile.txt?tag=text"+i);
 			//LabelInstance.GetComponentInChildren<TextMesh>().color = ES2.Load<Color>("myOtherFile.txt?tag=textColor"+i);

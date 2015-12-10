@@ -6,12 +6,14 @@ public class ShowUI : MonoBehaviour
 
 	public GameObject UIPanel1;
 	public GameObject UIPanel2;
+	public GameObject UIPanel3;
 	private bool panelActive = false;
 
 	void Start()
 	{
 		UIPanel1.SetActive(false);
 		UIPanel2.SetActive(false);
+		UIPanel3.SetActive(false);
 	}
 	// Update is called once per frame
 	void Update () 
@@ -21,7 +23,7 @@ public class ShowUI : MonoBehaviour
 		{
 			UIPanel1.SetActive(true);
 			UIPanel2.SetActive(true);
-
+			UIPanel3.SetActive(true);
 			panelActive = true;
 		}
 
@@ -29,7 +31,7 @@ public class ShowUI : MonoBehaviour
 		{
 			UIPanel1.SetActive(false);
 			UIPanel2.SetActive(false);
-
+			UIPanel3.SetActive(false);
 			panelActive = false;
 		}
 	}

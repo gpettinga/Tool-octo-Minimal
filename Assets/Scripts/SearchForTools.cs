@@ -13,10 +13,34 @@ public class SearchForTools : MonoBehaviour {
 	public Canvas toolOptions;
 	public GameObject indicator;
 
+	public float maxCountTime = 10;
+	public float countdownTime;
+
+	private bool countdown;
+
+	private GameObject[] Indicators; 
+
 	void Update()
 	{
 
 		inFieldText = inField.text.ToString();
+
+		if (countdown)
+		{
+			countdownTime -= Time.deltaTime;
+			if (countdownTime <= 0)
+			{
+				countdown = false;
+				countdownTime = 0;
+				Indicators = GameObject.FindGameObjectsWithTag("Indicator");
+				for (int i = 0; i < Indicators.Length; i++)
+				{
+					Destroy(Indicators[i]);
+					
+				}
+
+			}
+		}
 
 	}
 
@@ -30,6 +54,8 @@ public class SearchForTools : MonoBehaviour {
 
 			Instantiate (indicator, toolSearchedFor.transform.position, Quaternion.identity);
 
+			countdownTime = maxCountTime;
+			countdown = true;
 			//toolOptions.enabled = true;
 		}
 

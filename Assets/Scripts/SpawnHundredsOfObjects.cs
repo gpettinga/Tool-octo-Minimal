@@ -16,7 +16,7 @@ public class SpawnHundredsOfObjects : MonoBehaviour
 		for (int i=0; i<numObjectsToSpawn; i++) 
 		{
 			cameraPosition = Camera.main.transform.position;
-			SpawnRelToCamera = new Vector3 (cameraPosition.x + Random.Range (-100, 100) * sizeToSpawn, cameraPosition.y + Random.Range (-100, 100) * sizeToSpawn, cameraPosition.z + 30);
+			SpawnRelToCamera = new Vector3 (cameraPosition.x - 400, cameraPosition.y +  (i *20) , cameraPosition.z + 30);
 			Instantiate (spawnableObject, SpawnRelToCamera, Quaternion.identity);
 		}
 	}

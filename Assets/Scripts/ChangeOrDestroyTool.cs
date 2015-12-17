@@ -29,6 +29,10 @@ public class ChangeOrDestroyTool : MonoBehaviour {
 			toolOptions.enabled = true;
 		}
 	}
+	public void Open()
+	{
+		toolOptions.enabled = true;
+	}
 	public void Close()
 	{
 		toolOptions.enabled = false;
@@ -37,4 +41,7 @@ public class ChangeOrDestroyTool : MonoBehaviour {
 	{
 		Destroy (gameObject);
 	}
+
+
+
 }

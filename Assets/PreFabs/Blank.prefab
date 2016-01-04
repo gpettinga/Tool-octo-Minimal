@@ -626,6 +626,7 @@ GameObject:
   - 114: {fileID: 11471398}
   - 114: {fileID: 11476738}
   - 212: {fileID: 21273912}
+  - 114: {fileID: 11404156}
   m_Layer: 0
   m_Name: Blank
   m_TagString: Tool
@@ -979,6 +980,18 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4278190080
+--- !u!114 &11404156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 167410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa2eef4121d97b4e8ef4bc21db71b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSelected: 0
 --- !u!114 &11404368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4745,6 +4758,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: selectionCircle
+      value: 
+      objectReference: {fileID: 107276, guid: cb446c980bcf56b4d8c743a0a2745e61, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 167410}

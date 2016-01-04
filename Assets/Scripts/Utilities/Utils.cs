@@ -48,4 +48,26 @@ public class Utils
         // Create Rect
         return Rect.MinMaxRect(topLeft.x, topLeft.y, bottomRight.x, bottomRight.y);
     }
+
+    public static Bounds GetViewportBounds(Camera camera, Vector3 screenPosition1, Vector3 screenPosition2)
+    {
+        //var v1 = Camera.main.WorldToViewportPoint(screenPosition1);
+        //var v1 = Camera.main.ViewportToWorldPoint(screenPosition1);
+        var v1 = Camera.main.ScreenToViewportPoint(screenPosition1);
+        //var v1 = Camera.main.ViewportToScreenPoint(screenPosition1);
+
+        //var v2 = Camera.main.WorldToViewportPoint(screenPosition2);
+        //var v2 = Camera.main.ViewportToWorldPoint(screenPosition2);
+        var v2 = Camera.main.ScreenToViewportPoint(screenPosition2); 
+        //var v2 = Camera.main.ViewportToScreenPoint(screenPosition2);
+
+        var min = Vector3.Min(v1, v2);
+        var max = Vector3.Max(v1, v2);
+        min.z = camera.nearClipPlane;
+        max.z = camera.farClipPlane;
+
+        var bounds = new Bounds();
+        bounds.SetMinMax(min, max);
+        return bounds;
+    }
 }

@@ -1,11 +1,16 @@
 ﻿using UnityEngine;
+using System;
+using System.Linq;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class ScreenSelect : MonoBehaviour
 {
 
     bool isSelecting = false;
     Vector3 mousePosition1;
+    //public GameObject selectionCirclePrefab;
 
     void Update()
     {
@@ -20,12 +25,54 @@ public class ScreenSelect : MonoBehaviour
                 isSelecting = true;
             }
         }
+
         if (Input.GetMouseButtonUp(0))
         {
+           
+            var selectedObjects = new List<SelectableToolObject>();
+            foreach (var selectableObject in FindObjectsOfType<SelectableToolObject>())
+            {
+                if (IsWithinSelectionBounds(selectableObject.gameObject))
+                {
+                    selectedObjects.Add(selectableObject);
+                }
+            }
             isSelecting = false;
         }
+
+        //***********************do something with the seleced tools***********************\\
+        if (isSelecting)
+        {
+            foreach (var selectableObject in FindObjectsOfType<SelectableToolObject>())
+            {
+                if (IsWithinSelectionBounds(selectableObject.gameObject))
+                {
+                    Debug.Log("In selection box" + selectableObject);
+
+                }
+                else
+                {
+                   // Debug.Log("Not in selection box" + selectableObject);
+                }
+            }
+        }
+      
     }
 
+    public bool IsWithinSelectionBounds(GameObject gameObject)
+    {
+        if(!isSelecting)
+        {
+            return false;
+        }
+
+        var camera = Camera.main;
+        var viewportBounds = Utils.GetViewportBounds(camera, mousePosition1, Input.mousePosition);
+        return viewportBounds.Contains(camera.WorldToViewportPoint(gameObject.transform.position));
+        //return viewportBounds.Contains(camera.ViewportToWorldPoint(gameObject.transform.position));
+        //return viewportBounds.Contains(camera.ScreenToViewportPoint(gameObject.transform.position));
+        //return viewportBounds.Contains(camera.ViewportToScreenPoint(gameObject.transform.position));
+    }
     void OnGUI()
     {
         if (isSelecting)
@@ -35,5 +82,4 @@ public class ScreenSelect : MonoBehaviour
             Utils.DrawScreenRectBorder(rect, 2, new Color(0.8f, 0.8f, 0.95f));
         }
     }
-	
 }

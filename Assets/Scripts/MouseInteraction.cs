@@ -84,6 +84,7 @@ public class MouseInteraction : MonoBehaviour
         newPos = new Vector2(xPosRounded, yPosRounded);
 
         gameObject.transform.position = newPos;
+        
 
         //		foreach(BoxCollider2D col in collidersOnTool)
         //		{

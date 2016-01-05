@@ -51,14 +51,14 @@ public class Utils
 
     public static Bounds GetViewportBounds(Camera camera, Vector3 screenPosition1, Vector3 screenPosition2)
     {
+        var v1 = Camera.main.ScreenToViewportPoint(screenPosition1);
         //var v1 = Camera.main.WorldToViewportPoint(screenPosition1);
         //var v1 = Camera.main.ViewportToWorldPoint(screenPosition1);
-        var v1 = Camera.main.ScreenToViewportPoint(screenPosition1);
         //var v1 = Camera.main.ViewportToScreenPoint(screenPosition1);
 
+        var v2 = Camera.main.ScreenToViewportPoint(screenPosition2);
         //var v2 = Camera.main.WorldToViewportPoint(screenPosition2);
         //var v2 = Camera.main.ViewportToWorldPoint(screenPosition2);
-        var v2 = Camera.main.ScreenToViewportPoint(screenPosition2); 
         //var v2 = Camera.main.ViewportToScreenPoint(screenPosition2);
 
         var min = Vector3.Min(v1, v2);

@@ -5573,9 +5573,9 @@ GameObject:
   - 114: {fileID: 1938378669}
   - 114: {fileID: 1938378672}
   - 114: {fileID: 1938378670}
-  - 114: {fileID: 1938378671}
   - 114: {fileID: 1938378673}
   - 114: {fileID: 1938378674}
+  - 114: {fileID: 1938378671}
   m_Layer: 0
   m_Name: _Controler
   m_TagString: Untagged
@@ -5696,6 +5696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7494b067bf9a620448bfc02818f21420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragablePoint: {fileID: 0}
 --- !u!1 &1947098311
 GameObject:
   m_ObjectHideFlags: 0

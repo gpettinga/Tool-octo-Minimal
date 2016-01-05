@@ -7,9 +7,11 @@ using System.Collections.Generic;
 
 public class ScreenSelect : MonoBehaviour
 {
-
     bool isSelecting = false;
     Vector3 mousePosition1;
+    public GameObject dragablePoint;
+   
+
     //public GameObject selectionCirclePrefab;
 
     void Update()
@@ -24,11 +26,11 @@ public class ScreenSelect : MonoBehaviour
             {
                 isSelecting = true;
             }
+            
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-           
             var selectedObjects = new List<SelectableToolObject>();
             foreach (var selectableObject in FindObjectsOfType<SelectableToolObject>())
             {
@@ -36,23 +38,49 @@ public class ScreenSelect : MonoBehaviour
                 {
                     selectedObjects.Add(selectableObject);
                 }
+
+                
             }
             isSelecting = false;
+
+            foreach (var selectableObject in selectedObjects)
+            {
+               // Debug.Log(selectableObject.transform.parent);
+                selectableObject.transform.parent = selectedObjects[0].transform;
+            }
+
+            //******Fix, Needs a way to determine what object to drag from *****
+
+            if (selectedObjects.Count != 0)
+            {
+                dragablePoint = selectedObjects[0].gameObject;
+                dragablePoint.GetComponent<SelectableToolObject>().DragfromThisPoint.SetActive(true);
+            }
+            else {
+                return;
+            }
         }
 
-        //***********************do something with the seleced tools***********************\\
+        //*************************do something with the seleced tools***********************\\
         if (isSelecting)
         {
             foreach (var selectableObject in FindObjectsOfType<SelectableToolObject>())
             {
                 if (IsWithinSelectionBounds(selectableObject.gameObject))
                 {
-                    Debug.Log("In selection box" + selectableObject);
+                   
+                    if (selectableObject.isSelected == false)
+                    {
+                        selectableObject.isSelected = true;
+                     
+                    }
 
                 }
                 else
                 {
-                   // Debug.Log("Not in selection box" + selectableObject);
+                    selectableObject.isSelected = false;
+                    selectableObject.transform.parent = null;
+                    //Debug.Log("Not in selection box" + selectableObject);
                 }
             }
         }
@@ -68,7 +96,9 @@ public class ScreenSelect : MonoBehaviour
 
         var camera = Camera.main;
         var viewportBounds = Utils.GetViewportBounds(camera, mousePosition1, Input.mousePosition);
+
         return viewportBounds.Contains(camera.WorldToViewportPoint(gameObject.transform.position));
+        
         //return viewportBounds.Contains(camera.ViewportToWorldPoint(gameObject.transform.position));
         //return viewportBounds.Contains(camera.ScreenToViewportPoint(gameObject.transform.position));
         //return viewportBounds.Contains(camera.ViewportToScreenPoint(gameObject.transform.position));

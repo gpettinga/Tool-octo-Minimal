@@ -5,38 +5,40 @@ using UnityEngine.UI;
 public class ChangeOrDestroyTool : MonoBehaviour {
 
 	public bool mouseOverTool;
-	public Canvas toolOptions;
+	public GameObject toolOptions;
 	void Start()
 	{
-		toolOptions = GetComponentInChildren<Canvas> ();
-		toolOptions.enabled = false;
+		//toolOptions = GetComponentInChildren<Canvas> ();
+		toolOptions.SetActive(false);
 	}
 
 	void OnMouseEnter()
 	{
 		mouseOverTool = true;
 	}
+    void OnMouseOver()
+    {
+        mouseOverTool = true;
+        if (Input.GetMouseButtonDown(1))
+        {
+            toolOptions.SetActive(true);
+        }
+    }
 
 	void OnMouseExit()
 	{
 		mouseOverTool = false;
 	}
 
-	void Update()
-	{
-		if (Input.GetMouseButtonDown(1)&& mouseOverTool)
-		{
-			toolOptions.enabled = true;
-		}
-	}
+	
 	public void Open()
 	{
-		toolOptions.enabled = true;
-	}
+        toolOptions.SetActive(true);
+    }
 	public void Close()
 	{
-		toolOptions.enabled = false;
-	}
+        toolOptions.SetActive(false);
+    }
 	public void Delete()
 	{
 		Destroy (gameObject);

@@ -46,3 +46,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 85141153
+    locked: 0
+  - name: BackGround_GFX
+    uniqueID: 830157053
+    locked: 0

@@ -11,14 +11,14 @@ public class SaveLoadTiles : MonoBehaviour
 	private int numLabels;
 	public GameObject blankTool;
 	public GameObject blankLabel;
-
-	
-	// Save the tiles when the level is changed or application is quit.
-
+    
+    // Save the tiles when the level is changed or application is quit.
+    
 	void OnApplicationQuit()
 	{
-		//get the amount of tiles to be saved/loaded 
-		tiles = GameObject.FindGameObjectsWithTag ("Tool");
+        
+        //get the amount of tiles to be saved/loaded 
+        tiles = GameObject.FindGameObjectsWithTag ("Tool");
 		numTiles = tiles.Length;
 		//saving the number of tiles 
 		ES2.Save(tiles.Length, "myFile.txt?tag=tileLength");
@@ -60,6 +60,7 @@ public class SaveLoadTiles : MonoBehaviour
 			ES2.Save(textMesh.text, "myOtherFile.txt?tag=text"+i);
 			//ES2.Save(textMesh.color, "myOtherFile.txt?tag=textColor"+i);
 		}
+    
 	}
 	
 	// Load the tiles when this script starts up.
@@ -127,6 +128,7 @@ public class SaveLoadTiles : MonoBehaviour
 	}
 	public void SaveTools()
 	{
+        
 		//get the amount of tiles to be saved/loaded 
 		tiles = GameObject.FindGameObjectsWithTag ("Tool");
 		numTiles = tiles.Length;
@@ -170,5 +172,8 @@ public class SaveLoadTiles : MonoBehaviour
 			ES2.Save(textMesh.text, "myOtherFile.txt?tag=text"+i);
 			//ES2.Save(textMesh.color, "myOtherFile.txt?tag=textColor"+i);
 		}
+        
 	}
+
+    
 }

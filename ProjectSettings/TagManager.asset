@@ -9,6 +9,7 @@ TagManager:
   - XXT_Standard_Tool
   - Tolteq_Tool
   - Tool
+  - GuiText
   layers:
   - Default
   - TransparentFX

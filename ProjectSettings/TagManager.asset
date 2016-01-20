@@ -10,6 +10,7 @@ TagManager:
   - Tolteq_Tool
   - Tool
   - GuiText
+  - Small_Kit_Label
   layers:
   - Default
   - TransparentFX

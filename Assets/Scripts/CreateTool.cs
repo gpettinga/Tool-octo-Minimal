@@ -5,8 +5,9 @@ public class CreateTool : MonoBehaviour {
 
 	public GameObject ToolIcon;
 	public GameObject LabelIcon;
+    public GameObject SmallLabelIcon;
 
-	public Vector3 cameraPosition;
+    public Vector3 cameraPosition;
 
 	public Vector3 SpawnRelToCamera;
 	//public Vector3 randSpawnPoint;
@@ -48,4 +49,19 @@ public class CreateTool : MonoBehaviour {
 		Instantiate (LabelIcon, SpawnRelToCamera, Quaternion.identity);
 		
 	}
+    public void SpawnSmallLabel(Object SmallLabelIcon)
+    {
+        //Creates a new tool at the center point of the camera
+        //Vector3 randSpawnPoint = Camera.main.ScreenToWorldPoint( new Vector3(Screen.width/2, Screen.height/2, 30));
+
+        //Creates tool at a random point on screen one
+        //randSpawnPoint = Random.insideUnitCircle * 400;
+        cameraPosition = Camera.main.transform.position;
+        SpawnRelToCamera = new Vector3(cameraPosition.x, cameraPosition.y, cameraPosition.z + 30);
+
+
+        //Instantiate (ToolIcon,nonRandSpawn, Quaternion.identity);
+        Instantiate(SmallLabelIcon, SpawnRelToCamera, Quaternion.identity);
+
+    }
 }

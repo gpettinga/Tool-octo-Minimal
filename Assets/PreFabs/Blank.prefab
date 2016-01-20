@@ -978,7 +978,7 @@ TextMesh:
   m_GameObject: {fileID: 149238}
   m_Text: 00
   m_OffsetZ: 0
-  m_CharacterSize: 5.5
+  m_CharacterSize: 9
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
@@ -3248,7 +3248,7 @@ MonoBehaviour:
   m_LineType: 0
   m_HideMobileInput: 0
   m_CharacterValidation: 0
-  m_CharacterLimit: 0
+  m_CharacterLimit: 5
   m_EndEdit:
     m_PersistentCalls:
       m_Calls: []

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-public class ChangeOrDestroyKit : MonoBehaviour 
+public class ChangeKitText : MonoBehaviour 
 {
 	public BoxCollider2D thisCollider;
 

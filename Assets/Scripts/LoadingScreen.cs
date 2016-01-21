@@ -49,7 +49,7 @@ public class LoadingScreen : MonoBehaviour
             loadProgress = (int)(async.progress * 100);
             loadingTextInfo.text = "Load Progress " + loadProgress + "%";
             loadingBar.transform.localScale = new Vector3(async.progress, loadingBar.transform.localScale.y, loadingBar.transform.localScale.z);
-            logoImage.transform.Rotate(Vector3.right, Time.deltaTime*async.progress);
+            //logoImage.transform.Rotate(Vector3.right, Time.deltaTime*async.progress);
             yield return null;
         }
     

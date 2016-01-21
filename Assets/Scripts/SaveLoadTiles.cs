@@ -13,15 +13,22 @@ public class SaveLoadTiles : MonoBehaviour
 	private int numLabels;
     private int numSmallLabels;
 
+    public float countUp;
+    public float totalCompleteLoad;
+
     public GameObject blankTool;
 	public GameObject blankLabel;
     public GameObject blankSmallLabel;
+
+    public GameObject loadingBackground;
+    public GameObject loadingBar;
+    public Text loadingText;
+    private float loadProgress;
 
     // Save the tiles when the level is changed or application is quit.
 
     void OnApplicationQuit()
 	{
-        
         //****************************** get the amount of tiles to be saved/loaded **********************************
         tiles = GameObject.FindGameObjectsWithTag ("Tool");
 		numTiles = tiles.Length;
@@ -77,59 +84,77 @@ public class SaveLoadTiles : MonoBehaviour
         }
 
     }
-	
-	// Load the tiles when this script starts up.
-	void Start() 
-	{
-		//get number of tiles to load so that i has a value?
-		numTiles = ES2.Load<int>("myFile.txt?tag=tileLength");
-		numLabels = ES2.Load<int>("myOtherFile.txt?tag=labelLength");
-        numSmallLabels = ES2.Load<int>("myOtherSmallFile.txt?tag=smallLabelLength");
-        //Debug.Log ("number of tiles loaded is " + numTiles);
-        // Loop over each of the tiles we want to load ...
-        for (int i=0; i<numTiles; i++)
-		{
-			if (!ES2.Exists("myFile.txt"))
-			{
-				return;
-			}
-			//create a blank tool at the location [i] that was saved
-			GameObject toolInstance;
-			toolInstance = Instantiate(blankTool,ES2.Load<Vector3>("myFile.txt?tag=position"+i),Quaternion.identity) as GameObject;
-			// Now load the data using the same filename and tag we used to save it.
-			toolInstance.GetComponent<Renderer>().material = ES2.Load<Material>("myFile.txt?tag=color"+i);
-			
-			// Get the TextMesh so we can load data into it.
-			toolInstance.GetComponentInChildren<TextMesh>().text =  ES2.Load<string>("myFile.txt?tag=text"+i);
-			// and change the name of each component to match its on screen text name.
-			toolInstance.name = toolInstance.GetComponentInChildren<TextMesh>().text;
-			//or give it a number associated with the save file.
-	
-			toolInstance.GetComponentInChildren<TextMesh>().color = ES2.Load<Color>("myFile.txt?tag=textColor"+i);
-		}
-		for(int i=0; i<numLabels; i++)
-		{
-			if (!ES2.Exists("myOtherFile.txt"))
-			{
-				return;
-			}
-			//create a blank tool at the location [i] that was saved
-			GameObject LabelInstance;
-			LabelInstance = Instantiate(blankLabel,ES2.Load<Vector3>("myOtherFile.txt?tag=position"+i),Quaternion.identity) as GameObject;
-			// Now load the data using the same filename and tag we used to save it.
-			
-			// Get the TextMesh so we can load data into it...
-			LabelInstance.GetComponentInChildren<TextMesh>().text =  ES2.Load<string>("myOtherFile.txt?tag=text"+i);
 
-			// and change the name of each component to match its on screen text name.
-			LabelInstance.name = "Label " + LabelInstance.GetComponentInChildren<TextMesh>().text;
-		}
+    // Load the tiles when this script starts up.
+    void Start()
+    {
+        loadingBar.transform.localScale = new Vector3(0, loadingBar.transform.localScale.y, loadingBar.transform.localScale.z);
+        StartCoroutine(LoadAllOfTheStuff());
+    }
+
+	
+    IEnumerator LoadAllOfTheStuff()
+    {
+        // get number of tiles to load so that i has a value?
+        numTiles = ES2.Load<int>("myFile.txt?tag=tileLength");
+        numLabels = ES2.Load<int>("myOtherFile.txt?tag=labelLength");
+        numSmallLabels = ES2.Load<int>("myOtherSmallFile.txt?tag=smallLabelLength");
+        // Loop over each of the tiles we want to load ...
+        for (int i = 0; i < numTiles; i++)
+        {
+            if (!ES2.Exists("myFile.txt"))
+            {
+                yield return null;// just "return" if not in coroutine
+            }
+            // create a blank tool at the location [i] that was saved
+            GameObject toolInstance;
+            toolInstance = Instantiate(blankTool, ES2.Load<Vector3>("myFile.txt?tag=position" + i), Quaternion.identity) as GameObject;
+            // Now load the data using the same filename and tag we used to save it.
+            toolInstance.GetComponent<Renderer>().material = ES2.Load<Material>("myFile.txt?tag=color" + i);
+            // Get the TextMesh so we can load data into it.
+            toolInstance.GetComponentInChildren<TextMesh>().text = ES2.Load<string>("myFile.txt?tag=text" + i);
+            // and change the name of each component to match its on screen text name.
+            toolInstance.name = toolInstance.GetComponentInChildren<TextMesh>().text;
+            // or give it a number associated with the save file.
+            toolInstance.GetComponentInChildren<TextMesh>().color = ES2.Load<Color>("myFile.txt?tag=textColor" + i);
+
+            countUp += 1;
+            totalCompleteLoad = countUp / numTiles;
+            loadProgress = (int)(totalCompleteLoad * 100);
+            //Debug.Log("Count up to total tools " + (totalCompleteLoad));
+            loadingBar.transform.localScale = new Vector3(totalCompleteLoad, loadingBar.transform.localScale.y, loadingBar.transform.localScale.z);
+            loadingText.text = "Load Progress " + loadProgress + "%";
+            if (totalCompleteLoad == 1)
+            {
+                loadingBackground.SetActive(false);
+                loadingBar.SetActive(false);
+                loadingText.gameObject.SetActive(false);
+            }
+            yield return new WaitForSeconds(.01f);
+        }
+        for (int i = 0; i < numLabels; i++)
+        {
+            if (!ES2.Exists("myOtherFile.txt"))
+            {
+                yield return null;// just "return" if not in coroutine
+            }
+            // create a blank tool at the location [i] that was saved
+            GameObject LabelInstance;
+            LabelInstance = Instantiate(blankLabel, ES2.Load<Vector3>("myOtherFile.txt?tag=position" + i), Quaternion.identity) as GameObject;
+            // Now load the data using the same filename and tag we used to save it.
+
+            // Get the TextMesh so we can load data into it...
+            LabelInstance.GetComponentInChildren<TextMesh>().text = ES2.Load<string>("myOtherFile.txt?tag=text" + i);
+
+            // and change the name of each component to match its on screen text name.
+            LabelInstance.name = "Label " + LabelInstance.GetComponentInChildren<TextMesh>().text;
+        }
 
         for (int i = 0; i < numSmallLabels; i++)
         {
             if (!ES2.Exists("myOtherSmallFile.txt"))
             {
-                return;
+                yield return null;// just "return" if not in coroutine
             }
             //create a blank tool at the location [i] that was saved
             GameObject SmallLabelInstance;
@@ -142,6 +167,7 @@ public class SaveLoadTiles : MonoBehaviour
         }
 
     }
+
 	public void SaveTools()
 	{
         
@@ -208,5 +234,4 @@ public class SaveLoadTiles : MonoBehaviour
 
     }
 
-    
 }

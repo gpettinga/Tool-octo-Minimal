@@ -991,7 +991,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ed9c7790993a32f4d83b24c21899b089, type: 3}
-  m_Color: {r: .470588267, g: .670588255, b: 1, a: 1}
+  m_Color: {r: .839215755, g: .839215755, b: .839215755, a: 1}
 --- !u!222 &22203544
 CanvasRenderer:
   m_ObjectHideFlags: 1

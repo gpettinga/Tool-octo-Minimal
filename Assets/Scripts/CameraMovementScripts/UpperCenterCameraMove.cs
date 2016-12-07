@@ -15,14 +15,16 @@ public class UpperCenterCameraMove : MonoBehaviour
 				MoveCamera.camAtPos2 = true;
 				MoveCamera.camAtPos3 = false;
 				MoveCamera.camAtPos4 = false;
-			}
+                MoveCamera.camAtPosExtra = false;
+            }
 			else if(MoveCamera.camAtPos2 == true && !MoveCamera.camAtPos1)
 			{
 				MoveCamera.camAtPos1 = true;
 				MoveCamera.camAtPos2 = false;
 				MoveCamera.camAtPos3 = false;
 				MoveCamera.camAtPos4 = false;
-			}
+                MoveCamera.camAtPosExtra = false;
+            }
 
 			else 
 			{

@@ -72,67 +72,80 @@ public class MoveCamera : MonoBehaviour
 
 	public void atPosOne()
 	{
-		camAtPos1 = true;
+        camAtPosExtra = false;
+        camAtPos1 = true;
 		camAtPos2 = false;
 		camAtPos3 = false;
 		camAtPos4 = false;
 		camAtPos5 = false;
 		camAtPos6 = false;
-	}
+       
+    }
 	public void atPosTwo()
 	{
-		camAtPos1 = false;
-		camAtPos2 = true;
+        camAtPos2 = true;
+        camAtPosExtra = false;
+        Debug.Log("fire button 2");
+        camAtPos1 = false;
 		camAtPos3 = false;
 		camAtPos4 = false;
 		camAtPos5 = false;
 		camAtPos6 = false;
-	}
+    }
 	public void atPosThree()
 	{
-		camAtPos1 = false;
+        camAtPosExtra = false;
+        camAtPos1 = false;
 		camAtPos2 = false;
 		camAtPos3 = true;
 		camAtPos4 = false;
 		camAtPos5 = false;
 		camAtPos6 = false;
-	}
+        
+    }
 	public void atPosFour()
 	{
-		camAtPos1 = false;
+        camAtPosExtra = false;
+        camAtPos1 = false;
 		camAtPos2 = false;
 		camAtPos3 = false;
 		camAtPos4 = true;
 		camAtPos5 = false;
 		camAtPos6 = false;
-	}
+        
+    }
 	public void atPosFive()
 	{
-		camAtPos1 = false;
+        camAtPosExtra = false;
+        camAtPos1 = false;
 		camAtPos2 = false;
 		camAtPos3 = false;
 		camAtPos4 = false;
 		camAtPos5 = true;
 		camAtPos6 = false;
-	}
+        
+    }
 	public void atPosSix()
 	{
-		camAtPos1 = false;
+        camAtPosExtra = false;
+        camAtPos1 = false;
 		camAtPos2 = false;
 		camAtPos3 = false;
 		camAtPos4 = false;
 		camAtPos5 = false;
 		camAtPos6 = true;
-	}
+        
+    }
     public void atPosExtraTools()
     {
+        camAtPosExtra = true;
         camAtPos1 = false;
         camAtPos2 = false;
         camAtPos3 = false;
         camAtPos4 = false;
         camAtPos5 = false;
         camAtPos6 = false;
-        camAtPosExtra = true;
+       
     }
 
     //	void OnGUI()

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LoadingScreen : MonoBehaviour
 {
@@ -43,7 +44,8 @@ public class LoadingScreen : MonoBehaviour
         firstLoadImage.SetActive(false);
         loadingBar.transform.localScale = new Vector3(loadProgress, loadingBar.transform.localScale.y, loadingBar.transform.localScale.z);
 
-        AsyncOperation async = Application.LoadLevelAsync(level);
+       // AsyncOperation async = Application.LoadLevelAsync(level);
+        AsyncOperation async = SceneManager.LoadSceneAsync(level);
         while (!async.isDone)
         {
             loadProgress = (int)(async.progress * 100);

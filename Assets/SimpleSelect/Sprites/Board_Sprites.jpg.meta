@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: 9a529bc66400bc54bbb4726a0cb2e671
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RedishLabel
+    21300002: Star1
+    21300004: Star2
+    21300006: Star3
+    21300008: Boarder1
+    21300010: Boarder2
+    21300012: Boarder3
+    21300014: Boarder4
+    21300016: Boarder5
+    21300018: LightBlueBoarder
+    21300020: LightGreyTool
+    21300022: YellowBoarder
+    21300024: BlueTool
+    21300026: LightBluetool
+    21300028: LimeGreenTool
+    21300030: DKGreenTool
+    21300032: RedTool
+    21300034: OrangeTool
+    21300036: LightOrangeTool
+    21300038: YellowTool
+    21300040: Kit
+    21300042: RedBoarder
+    21300044: BlueBoarder
+    21300046: GreenBoarder
+    21300048: whiteBoarder
+    21300050: BlueLabel
+    21300052: LightPurpleLabel
+    21300054: DkPurpleLabel
+    21300056: LightGreenLabel
+    21300058: DkGreenlabel
+    21300060: BlackTool
+    21300062: DKGreyTool
+    21300064: Blue_boarder
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 300
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: RedishLabel
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 799
+        width: 405
+        height: 90
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Star1
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 980
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Star2
+      rect:
+        serializedVersion: 2
+        x: 997
+        y: 980
+        width: 86
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Star3
+      rect:
+        serializedVersion: 2
+        x: 1100
+        y: 980
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Boarder1
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 2
+        width: 76
+        height: 1065
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Boarder2
+      rect:
+        serializedVersion: 2
+        x: 1724
+        y: 1
+        width: 45
+        height: 1065
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Boarder3
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 3
+        width: 14
+        height: 1065
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Boarder4
+      rect:
+        serializedVersion: 2
+        x: 1822
+        y: 3
+        width: 21
+        height: 1065
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Boarder5
+      rect:
+        serializedVersion: 2
+        x: 1870
+        y: 3
+        width: 25
+        height: 1065
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightBlueBoarder
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 863
+        width: 423
+        height: 100
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightGreyTool
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 708
+        width: 227
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YellowBoarder
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 753
+        width: 427
+        height: 101
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlueTool
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 618
+        width: 227
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightBluetool
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 619
+        width: 227
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LimeGreenTool
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 618
+        width: 227
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DKGreenTool
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 618
+        width: 228
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RedTool
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 515
+        width: 226
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: OrangeTool
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 515
+        width: 228
+        height: 90
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightOrangeTool
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 515
+        width: 227
+        height: 90
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: YellowTool
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 515
+        width: 228
+        height: 90
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Kit
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 78
+        width: 717
+        height: 422
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: RedBoarder
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 394
+        width: 426
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Blue_boarder
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 284
+        width: 426
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 14, y: 15, z: 15, w: 14}
+    - name: GreenBoarder
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 177
+        width: 426
+        height: 103
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: whiteBoarder
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 68
+        width: 426
+        height: 102
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlueLabel
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 978
+        width: 404
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightPurpleLabel
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 801
+        width: 406
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DkPurpleLabel
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 890
+        width: 405
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: LightGreenLabel
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 980
+        width: 406
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DkGreenlabel
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 889
+        width: 408
+        height: 89
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: BlackTool
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 712
+        width: 226
+        height: 88
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: DKGreyTool
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 710
+        width: 224
+        height: 87
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

@@ -12,8 +12,9 @@ public class MoveCamera : MonoBehaviour
 	public Transform goCamPos4;
 	public Transform goCamPos5;
 	public Transform goCamPos6;
+    public Transform goCamAtPosExtra;
 
-	public float transitionTime = .5f;
+    public float transitionTime = .5f;
 	public float firstClickTime;
 	public float secondClickTime;
 	public float doubleClickTime;
@@ -24,10 +25,12 @@ public class MoveCamera : MonoBehaviour
 	public static bool camAtPos4 = false;
 	public static bool camAtPos5 = false;
 	public static bool camAtPos6 = false;
+    public static bool camAtPosExtra = false;
 
 
-	// Use this for initialization
-	void Start ()
+
+    // Use this for initialization
+    void Start ()
 	{
 	
 	}
@@ -60,8 +63,12 @@ public class MoveCamera : MonoBehaviour
 			{
 				transform.position = Vector3.Lerp (currentPos, goCamPos6.position, transitionTime * Time.deltaTime);
 			}
-		
-	}
+        else if (camAtPosExtra)
+            {
+                transform.position = Vector3.Lerp(currentPos, goCamAtPosExtra.position, transitionTime * Time.deltaTime);
+            }
+
+    }
 
 	public void atPosOne()
 	{
@@ -117,54 +124,64 @@ public class MoveCamera : MonoBehaviour
 		camAtPos5 = false;
 		camAtPos6 = true;
 	}
+    public void atPosExtraTools()
+    {
+        camAtPos1 = false;
+        camAtPos2 = false;
+        camAtPos3 = false;
+        camAtPos4 = false;
+        camAtPos5 = false;
+        camAtPos6 = false;
+        camAtPosExtra = true;
+    }
 
-//	void OnGUI()
-//	{
-//		if (!camAtPos1)
-//		{
-//			if(GUI.Button(new Rect(Screen.width/2-100,0,100,20),"1"))
-//				{
-//					
-//					camAtPos1 = true;
-//					camAtPos2 = false;
-//					camAtPos3 = false;
-//					camAtPos4 = false;
-//				}
-//		}
-//		if (!camAtPos2)
-//		{
-//			if(GUI.Button(new Rect(Screen.width/2,0,100,20),"2"))
-//				{
-//					
-//					camAtPos1 = false;
-//					camAtPos2 = true;
-//					camAtPos3 = false;
-//					camAtPos4 = false;
-//				}
-//		}
-//		if (!camAtPos3)
-//		{
-//			if(GUI.Button(new Rect(Screen.width/2+100,0,100,20),"3"))
-//				{
-//					
-//					camAtPos1 = false;
-//					camAtPos2 = false;
-//					camAtPos3 = true;
-//					camAtPos4 = false;
-//				}
-//		}
-//		if (!camAtPos4)
-//		{
-//			if(GUI.Button(new Rect(Screen.width/2+200,0,100,20),"4"))
-//				{
-//					
-//					camAtPos1 = false;
-//					camAtPos2 = false;
-//					camAtPos3 = false;
-//					camAtPos4 = true;
-//				}
-//		}
-//	}
+    //	void OnGUI()
+    //	{
+    //		if (!camAtPos1)
+    //		{
+    //			if(GUI.Button(new Rect(Screen.width/2-100,0,100,20),"1"))
+    //				{
+    //					
+    //					camAtPos1 = true;
+    //					camAtPos2 = false;
+    //					camAtPos3 = false;
+    //					camAtPos4 = false;
+    //				}
+    //		}
+    //		if (!camAtPos2)
+    //		{
+    //			if(GUI.Button(new Rect(Screen.width/2,0,100,20),"2"))
+    //				{
+    //					
+    //					camAtPos1 = false;
+    //					camAtPos2 = true;
+    //					camAtPos3 = false;
+    //					camAtPos4 = false;
+    //				}
+    //		}
+    //		if (!camAtPos3)
+    //		{
+    //			if(GUI.Button(new Rect(Screen.width/2+100,0,100,20),"3"))
+    //				{
+    //					
+    //					camAtPos1 = false;
+    //					camAtPos2 = false;
+    //					camAtPos3 = true;
+    //					camAtPos4 = false;
+    //				}
+    //		}
+    //		if (!camAtPos4)
+    //		{
+    //			if(GUI.Button(new Rect(Screen.width/2+200,0,100,20),"4"))
+    //				{
+    //					
+    //					camAtPos1 = false;
+    //					camAtPos2 = false;
+    //					camAtPos3 = false;
+    //					camAtPos4 = true;
+    //				}
+    //		}
+    //	}
 
 }
 

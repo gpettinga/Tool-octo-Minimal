@@ -60,4 +60,12 @@ public class SearchForTools : MonoBehaviour {
 		}
 
 	}
+    public void PullToMainScreen()
+    {
+        toolSearchedFor = GameObject.Find(inFieldText);
+        if (toolSearchedFor != null)
+        {
+            toolSearchedFor.transform.position = new Vector3(0, 0, 0);
+        }
+    }
 }
